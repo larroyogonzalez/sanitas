@@ -4,42 +4,19 @@ import com.ning.http.client.AsyncHttpClient;
 
 public final class Builder {
 	private static AsyncHttpClient client = null;
-	private String oauthToken = null;
-	private String password = null;
-	private String token = null;
 	private String url;
 	private String username = null;
+	private String password = null;
+	private String token = null;
+	private String oauthToken = null;
 
 	public Builder(String url) {
 		this.url = url;
 	}
 
-	public Zendesk build() {
-		if (token != null) {
-			return new Zendesk(client, url, username + "/token", token);
-		}
-		return new Zendesk(client, url, username, password);
-	}
-
-	/**
-	 * @return the password
-	 */
-	public String getPassword() {
-		return password;
-	}
-
-	/**
-	 * @return the token
-	 */
-	public String getToken() {
-		return token;
-	}
-
-	/**
-	 * @return the username
-	 */
-	public String getUsername() {
-		return username;
+	public Builder setUsername(String username) {
+		this.username = username;
+		return this;
 	}
 
 	public Builder setPassword(String password) {
@@ -60,9 +37,34 @@ public final class Builder {
 		return this;
 	}
 
-	public Builder setUsername(String username) {
-		this.username = username;
-		return this;
+	public Zendesk build() {
+		if (token != null) {
+			return new Zendesk(client, url, username + "/token", token);
+		}
+		return new Zendesk(client, url, username, password);
+	}
+	
+
+	/**
+	 * @return the username
+	 */
+	public String getUsername() {
+		return username;
 	}
 
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * @return the token
+	 */
+	public String getToken() {
+		return token;
+	}
+	
+	
 }

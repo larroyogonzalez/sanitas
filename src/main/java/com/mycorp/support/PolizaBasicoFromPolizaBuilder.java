@@ -3,40 +3,40 @@ package com.mycorp.support;
 import util.datos.PolizaBasico;
 
 public class PolizaBasicoFromPolizaBuilder {
-	/** The poliza. */
-	private Poliza poliza;
+    /** The poliza. */
+    private Poliza poliza;
 
-	/**
-	 * Builds the.
-	 *
-	 * @return the poliza basico
-	 */
-	public PolizaBasico build() {
+    /**
+     * With poliza.
+     *
+     * @param poliza
+     *            the poliza
+     * @return the poliza basico from poliza builder
+     */
+    public PolizaBasicoFromPolizaBuilder withPoliza( final Poliza poliza ) {
+        this.poliza = poliza;
+        return this;
+    }
 
-		PolizaBasico polizaBasico = null;
+    /**
+     * Builds the.
+     *
+     * @return the poliza basico
+     */
+    public PolizaBasico build() {
 
-		if (null != poliza) {
-			polizaBasico = new PolizaBasico();
-			polizaBasico.setCompania(poliza.getCompania());
-			polizaBasico.setNumPoliza(poliza.getNumPoliza());
-			polizaBasico.setNumColectivo(poliza.getNumColectivo());
-			if (poliza.getPlanInfo() != null && poliza.getPlanInfo().getCode() != null) {
-				polizaBasico.setPlan(Integer.valueOf(poliza.getPlanInfo().getCode()));
-			}
-		}
+        PolizaBasico polizaBasico = null;
 
-		return polizaBasico;
-	}
+        if( null != poliza ) {
+            polizaBasico = new PolizaBasico();
+            polizaBasico.setCompania( poliza.getCompania() );
+            polizaBasico.setNumPoliza( poliza.getNumPoliza() );
+            polizaBasico.setNumColectivo( poliza.getNumColectivo() );
+            if (poliza.getPlanInfo()!= null && poliza.getPlanInfo().getCode()!= null) {
+                polizaBasico.setPlan(Integer.valueOf(poliza.getPlanInfo().getCode()));
+            }
+        }
 
-	/**
-	 * With poliza.
-	 *
-	 * @param poliza
-	 *            the poliza
-	 * @return the poliza basico from poliza builder
-	 */
-	public PolizaBasicoFromPolizaBuilder withPoliza(final Poliza poliza) {
-		this.poliza = poliza;
-		return this;
-	}
+        return polizaBasico;
+    }
 }

@@ -6,265 +6,264 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
 public class Poliza {
-	/** The Constant MAX_ARG. */
-	private static final int MAX_ARG = 3;
+    /** The Constant serialVersionUID. */
+    private static final long serialVersionUID = -7697433318924093934L;
 
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = -7697433318924093934L;
+    /** The Constant MAX_ARG. */
+    private static final int MAX_ARG = 3;
 
-	/** The compania. */
-	private Integer compania;
+    /** The id poliza. */
+    private String idPoliza;
 
-	/** The copago. */
-	private boolean copago;
+    /** The compania. */
+    private Integer compania;
 
-	/** The desc banco. */
-	private String descBanco;
+    /** The num poliza. */
+    private Integer numPoliza;
 
-	/** The id poliza. */
-	private String idPoliza;
+    /** The num colectivo. */
+    private Integer numColectivo;
 
-	/** The mostrar aseg post. */
-	private Boolean mostrarAsegPost;
+    /** The plan info. */
+    private ValueCode planInfo;
 
-	/** The num colectivo. */
-	private Integer numColectivo;
+    /** The perfil. */
+    private String perfil;
 
-	/** The num poliza. */
-	private Integer numPoliza;
+    /** The num tarjeta. */
+    private String numTarjeta;
 
-	/** The num tarjeta. */
-	private String numTarjeta;
+    /** The desc banco. */
+    private String descBanco;
 
-	/** The perfil. */
-	private String perfil;
+    /** The mostrar aseg post. */
+    private Boolean mostrarAsegPost;
 
-	/** The plan info. */
-	private ValueCode planInfo;
+    /** The reembolso. */
+    private Boolean reembolso;
 
-	/** The reembolso. */
-	private Boolean reembolso;
+    /** The copago. */
+    private boolean copago;
 
-	/**
-	 * Deserialize.
-	 *
-	 * @param fieldsList
-	 *            the fields list
-	 */
-	public final void deserialize(final List<String> fieldsList) {
+    /**
+     * Deserialize.
+     *
+     * @param fieldsList
+     *            the fields list
+     */
+    public final void deserialize( final List< String > fieldsList ) {
 
-		if (CollectionUtils.isNotEmpty(fieldsList) && fieldsList.size() == MAX_ARG) {
-			this.compania = NumberUtils.toInt(fieldsList.get(0));
-			this.numPoliza = NumberUtils.toInt(fieldsList.get(1));
-			this.numColectivo = NumberUtils.toInt(fieldsList.get(2));
-		} else {
-			throw new IllegalArgumentException("El identificador de la Poliza no es correcto");
-		}
+        if( CollectionUtils.isNotEmpty( fieldsList ) && fieldsList.size() == MAX_ARG ) {
+            this.compania = NumberUtils.toInt( fieldsList.get( 0 ) );
+            this.numPoliza = NumberUtils.toInt( fieldsList.get( 1 ) );
+            this.numColectivo = NumberUtils.toInt( fieldsList.get( 2 ) );
+        } else {
+            throw new IllegalArgumentException( "El identificador de la Poliza no es correcto" );
+        }
 
-	}
+    }
 
-	/**
-	 * Gets the compania.
-	 *
-	 * @return the compania
-	 */
-	public final Integer getCompania() {
-		return compania;
-	}
+    /**
+     * Gets the id poliza.
+     *
+     * @return the id poliza
+     */
+    public final String getIdPoliza() {
+        return idPoliza;
+    }
 
-	/**
-	 * Gets the desc banco.
-	 *
-	 * @return the desc banco
-	 */
-	public final String getDescBanco() {
-		return descBanco;
-	}
+    /**
+     * Sets the id poliza.
+     *
+     * @param idPoliza
+     *            the new id poliza
+     */
+    public final void setIdPoliza( String idPoliza ) {
+        this.idPoliza = idPoliza;
+    }
 
-	/**
-	 * Gets the id poliza.
-	 *
-	 * @return the id poliza
-	 */
-	public final String getIdPoliza() {
-		return idPoliza;
-	}
+    /**
+     * Gets the compania.
+     *
+     * @return the compania
+     */
+    public final Integer getCompania() {
+        return compania;
+    }
 
-	/**
-	 * Gets the mostrar aseg post.
-	 *
-	 * @return the mostrar aseg post
-	 */
-	public final Boolean getMostrarAsegPost() {
-		return mostrarAsegPost;
-	}
+    /**
+     * Sets the compania.
+     *
+     * @param compania
+     *            the new compania
+     */
+    public final void setCompania( Integer compania ) {
+        this.compania = compania;
+    }
 
-	/**
-	 * Gets the num colectivo.
-	 *
-	 * @return the num colectivo
-	 */
-	public final Integer getNumColectivo() {
-		return numColectivo;
-	}
+    /**
+     * Gets the num poliza.
+     *
+     * @return the num poliza
+     */
+    public final Integer getNumPoliza() {
+        return numPoliza;
+    }
 
-	/**
-	 * Gets the num poliza.
-	 *
-	 * @return the num poliza
-	 */
-	public final Integer getNumPoliza() {
-		return numPoliza;
-	}
+    /**
+     * Sets the num poliza.
+     *
+     * @param numPoliza
+     *            the new num poliza
+     */
+    public final void setNumPoliza( Integer numPoliza ) {
+        this.numPoliza = numPoliza;
+    }
 
-	/**
-	 * Gets the num tarjeta.
-	 *
-	 * @return the num tarjeta
-	 */
-	public final String getNumTarjeta() {
-		return numTarjeta;
-	}
+    /**
+     * Gets the num colectivo.
+     *
+     * @return the num colectivo
+     */
+    public final Integer getNumColectivo() {
+        return numColectivo;
+    }
 
-	/**
-	 * Gets the perfil.
-	 *
-	 * @return the perfil
-	 */
-	public final String getPerfil() {
-		return perfil;
-	}
+    /**
+     * Sets the num colectivo.
+     *
+     * @param numColectivo
+     *            the new num colectivo
+     */
+    public final void setNumColectivo( Integer numColectivo ) {
+        this.numColectivo = numColectivo;
+    }
 
-	/**
-	 * Gets the plan info.
-	 *
-	 * @return the plan info
-	 */
-	public final ValueCode getPlanInfo() {
-		return planInfo;
-	}
+    /**
+     * Gets the plan info.
+     *
+     * @return the plan info
+     */
+    public final ValueCode getPlanInfo() {
+        return planInfo;
+    }
 
-	/**
-	 * Gets the reembolso.
-	 *
-	 * @return the reembolso
-	 */
-	public final Boolean getReembolso() {
-		return reembolso;
-	}
+    /**
+     * Sets the plan info.
+     *
+     * @param planInfo
+     *            the new plan info
+     */
+    public final void setPlanInfo( ValueCode planInfo ) {
+        this.planInfo = planInfo;
+    }
 
-	/**
-	 * @return the copago
-	 */
-	public boolean isCopago() {
-		return this.copago;
-	}
+    /**
+     * Gets the perfil.
+     *
+     * @return the perfil
+     */
+    public final String getPerfil() {
+        return perfil;
+    }
 
-	/**
-	 * Sets the compania.
-	 *
-	 * @param compania
-	 *            the new compania
-	 */
-	public final void setCompania(Integer compania) {
-		this.compania = compania;
-	}
+    /**
+     * Sets the perfil.
+     *
+     * @param perfil
+     *            the new perfil
+     */
+    public final void setPerfil( String perfil ) {
+        this.perfil = perfil;
+    }
 
-	/**
-	 * @param copago
-	 *            the copago to set
-	 */
-	public void setCopago(boolean copago) {
-		this.copago = copago;
-	}
+    /**
+     * Gets the num tarjeta.
+     *
+     * @return the num tarjeta
+     */
+    public final String getNumTarjeta() {
+        return numTarjeta;
+    }
 
-	/**
-	 * Sets the desc banco.
-	 *
-	 * @param descBanco
-	 *            the new desc banco
-	 */
-	public final void setDescBanco(String descBanco) {
-		this.descBanco = descBanco;
-	}
+    /**
+     * Sets the num tarjeta.
+     *
+     * @param numTarjeta
+     *            the new num tarjeta
+     */
+    public final void setNumTarjeta( String numTarjeta ) {
+        this.numTarjeta = numTarjeta;
+    }
 
-	/**
-	 * Sets the id poliza.
-	 *
-	 * @param idPoliza
-	 *            the new id poliza
-	 */
-	public final void setIdPoliza(String idPoliza) {
-		this.idPoliza = idPoliza;
-	}
+    /**
+     * Gets the desc banco.
+     *
+     * @return the desc banco
+     */
+    public final String getDescBanco() {
+        return descBanco;
+    }
 
-	/**
-	 * Sets the mostrar aseg post.
-	 *
-	 * @param mostrarAsegPost
-	 *            the new mostrar aseg post
-	 */
-	public final void setMostrarAsegPost(Boolean mostrarAsegPost) {
-		this.mostrarAsegPost = mostrarAsegPost;
-	}
+    /**
+     * Sets the desc banco.
+     *
+     * @param descBanco
+     *            the new desc banco
+     */
+    public final void setDescBanco( String descBanco ) {
+        this.descBanco = descBanco;
+    }
 
-	/**
-	 * Sets the num colectivo.
-	 *
-	 * @param numColectivo
-	 *            the new num colectivo
-	 */
-	public final void setNumColectivo(Integer numColectivo) {
-		this.numColectivo = numColectivo;
-	}
+    /**
+     * Gets the mostrar aseg post.
+     *
+     * @return the mostrar aseg post
+     */
+    public final Boolean getMostrarAsegPost() {
+        return mostrarAsegPost;
+    }
 
-	/**
-	 * Sets the num poliza.
-	 *
-	 * @param numPoliza
-	 *            the new num poliza
-	 */
-	public final void setNumPoliza(Integer numPoliza) {
-		this.numPoliza = numPoliza;
-	}
+    /**
+     * Sets the mostrar aseg post.
+     *
+     * @param mostrarAsegPost
+     *            the new mostrar aseg post
+     */
+    public final void setMostrarAsegPost( Boolean mostrarAsegPost ) {
+        this.mostrarAsegPost = mostrarAsegPost;
+    }
 
-	/**
-	 * Sets the num tarjeta.
-	 *
-	 * @param numTarjeta
-	 *            the new num tarjeta
-	 */
-	public final void setNumTarjeta(String numTarjeta) {
-		this.numTarjeta = numTarjeta;
-	}
+    /**
+     * Gets the reembolso.
+     *
+     * @return the reembolso
+     */
+    public final Boolean getReembolso() {
+        return reembolso;
+    }
 
-	/**
-	 * Sets the perfil.
-	 *
-	 * @param perfil
-	 *            the new perfil
-	 */
-	public final void setPerfil(String perfil) {
-		this.perfil = perfil;
-	}
+    /**
+     * Sets the reembolso.
+     *
+     * @param reembolso
+     *            the new reembolso
+     */
+    public final void setReembolso( Boolean reembolso ) {
+        this.reembolso = reembolso;
+    }
 
-	/**
-	 * Sets the plan info.
-	 *
-	 * @param planInfo
-	 *            the new plan info
-	 */
-	public final void setPlanInfo(ValueCode planInfo) {
-		this.planInfo = planInfo;
-	}
+    /**
+     * @return the copago
+     */
+    public boolean isCopago() {
+        return this.copago;
+    }
 
-	/**
-	 * Sets the reembolso.
-	 *
-	 * @param reembolso
-	 *            the new reembolso
-	 */
-	public final void setReembolso(Boolean reembolso) {
-		this.reembolso = reembolso;
-	}
+    /**
+     * @param copago the copago to set
+     */
+    public void setCopago( boolean copago ) {
+        this.copago = copago;
+    }
 }
