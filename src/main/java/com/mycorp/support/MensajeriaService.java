@@ -1,9 +1,7 @@
 package com.mycorp.support;
 
-
-
 public interface MensajeriaService {
 
-    void enviar( CorreoElectronico correo );
+	void enviar(CorreoElectronico correo);
 
 }
